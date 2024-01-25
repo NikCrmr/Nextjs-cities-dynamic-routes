@@ -14,6 +14,7 @@ export default function City() {
   if (!city) {
     return null;
   }
+  const targetFrame = `https://en.wikipedia.org/wiki/${city.name}`;
   return (
     <>
       <Link href="/cities">Back to all cities</Link>
@@ -32,6 +33,7 @@ export default function City() {
             <b>Population: </b>
             {city.population}
           </p>
+          <iframe src={targetFrame} style={iFrameStyle}></iframe>
         </boxInBox>
       </StyledBox>
     </>
@@ -41,7 +43,7 @@ export default function City() {
 const StyledBox = styled.article`
   background-image: url("/prague-7172594_640.jpg");
   opacity: 0.6;
-  height: 25rem;
+  height: 40rem;
   width: 40rem;
 `;
 
@@ -50,3 +52,8 @@ const boxInBox = styled.div`
   width: auto;
   background-color: hsla(0, 0%, 100%, 0.875);
 `;
+
+const iFrameStyle = {
+  width: "30rem",
+  height: "25rem",
+};
