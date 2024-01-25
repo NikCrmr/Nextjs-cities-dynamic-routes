@@ -1,10 +1,10 @@
-import Cities from "./cities/index";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
     <div>
       <h1>Hello from Niko 😀</h1>
-      <Cities />
+      <Link href="/cities">Go to cities</Link>
     </div>
   );
 }
