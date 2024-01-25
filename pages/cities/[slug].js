@@ -15,6 +15,9 @@ export default function City() {
     return null;
   }
   const targetFrame = `https://en.wikipedia.org/wiki/${city.name}`;
+  const targetFrame2 = `https://wikitravel.org/de/${city.name}`;
+  const targetFrame3 = `https://www.openstreetmap.org/search?query=${city.name}`;
+
   return (
     <>
       <Link href="/cities">Back to all cities</Link>
@@ -34,6 +37,7 @@ export default function City() {
             {city.population}
           </p>
           <iframe src={targetFrame} style={iFrameStyle}></iframe>
+          <iframe src={targetFrame2} style={iFrameStyle2}></iframe>
         </boxInBox>
       </StyledBox>
     </>
@@ -42,9 +46,9 @@ export default function City() {
 
 const StyledBox = styled.article`
   background-image: url("/prague-7172594_640.jpg");
-  opacity: 0.6;
+  opacity: 0.9;
   height: 40rem;
-  width: 40rem;
+  width: 60rem;
 `;
 
 const boxInBox = styled.div`
@@ -54,6 +58,11 @@ const boxInBox = styled.div`
 `;
 
 const iFrameStyle = {
+  width: "30rem",
+  height: "25rem",
+};
+
+const iFrameStyle2 = {
   width: "30rem",
   height: "25rem",
 };
